@@ -6,7 +6,9 @@
 # Frameworkless_FE
 프레임워크없는 프론트엔드 개발 책 공부
 
-<img src="https://github.com/Hosung99/Frameworkless_FE/assets/84187086/8f0faa6b-61a7-4151-8e80-bd4eacb9aa4a" width="400" height="500" />
+<img src="https://github.com/BeyondPong/Frontend_Study/assets/84187086/fcc2a4ec-add4-4913-91c3-880a6eef5853" width="400" height="500" />
+
+
 <br />
 
 # 스터디 기간
