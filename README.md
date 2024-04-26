@@ -23,7 +23,7 @@ ex) feat: chapter02 완료
 ```
 ```
 feat        : 공부 완료 시 (chapter0x 완료)  
-fix         : 오타, 문서 수정 (오타 수정)<br />
+fix         : 오타, 문서 수정 (오타 수정)
 docs        : 메인 리드미 수정 (main 리드미 수정)  
 ```
 <br />
