@@ -85,7 +85,6 @@ const init = (parent = document.body) => {
 
 순수 함수로 요소를 렌더링 <br/>
 = DOM요소가 애플리케이션의 상태에만 의존
-![title](data:image/png;base64,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)
 
 ```
 순수 함수 렌더링의 수학적 표현
@@ -478,4 +477,60 @@ render();
 ## 🖥 가상 DOM
 
 리액트에 의해 유명해진 가상 DOM 개념은 선언적 렌더링 엔진의 성능을 개선시키는 방법이다. <br/>
-UI표현은 메모리에 유지되고 '실제' DOM과 동기화된다.
+UI표현은 메모리에 유지되고 '실제' DOM과 동기화된다. <br/>
+실제 DOM은 가능한 적은 작업을 수행한다. <br/>
+이 과정은 **조정**이라고 불린다.
+<br/>
+예를 들어 실제 DOM 요소가 다음과 같은 간단한 리스트라고 가정해보자.
+
+```
+<ul>
+  <li>First Item</li>
+</ul>
+```
+이를 다음과 같은 새 요소의 리스트로 변경하고자 한다.
+
+```
+<ul>
+  <li>First Item</li>
+  <li>Second Item</li>
+</ul>
+```
+이전 알고리즘에서는 전체 ul을 교체했다.
+<br/>
+가상 DOM 방법을 사용하면 시스템은 추가된 마지막 li가 실제 DOM에 필요한 유일한 작업임을 동적으로 이해한다. <br/>
+가상 DOM의 핵심은 **diff 알고리즘** 이다. <br/>
+이 알고리즘은 실제 DOM을 문서에서 분리된 새로운 DOM 요소의 사본으로 바꾸는 가장 빠른 방법을 찾아낸다.
+
+![title](https://velog.velcdn.com/images/junvhui/post/92f06c91-6660-47f2-99ed-f57a103054d2/image.png)
+
+## 🏠 간단한 가상 DOM 구현
+
+```
+diff 알고리즘을 사용하는 메인 컨트롤러
+
+const render = () => {
+  window.requestAnimationFrame(() => {
+        const main = document.querySelector('.todoapp');
+        const newMain = registry.renderRoot(main, state);
+        applyDiff(document.body, main, newMain);
+  }
+}
+```
+해당 diff알고리즘 구현에서는 노드를 다른 노드와 비교해 노드가 변경됐는지 확인한다.
+- 속성 수가 다르다.
+- 하나 이상의 속성이 변경됐다.
+- 노드에는 자식이 없으며, textContent가 다르다.
+<br/>
+이 외에도 실제 노드가 있는지, 가상노드가 있는지 등을 확인하여 applyDiff가 모든 하위 노드까지 적용되도록 반복한다.
+
+```
+  const realChildren = Array.from(realNode.children);
+  const virtualChildren = Array.from(virtualNode.children);
+
+  const max = Math.max(realChildren.length, virtualChildren.length);
+
+  for (let i = 0; i < max; i++) {
+    applyDiff(realNode, realChildren[i], virtualChildren[i]);
+  }
+```
