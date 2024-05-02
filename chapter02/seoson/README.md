@@ -23,6 +23,7 @@ HTML테이블
 ```
 
 ![title](https://velog.velcdn.com/images/junvhui/post/f64fad64-bc91-4f35-90e3-36fbdb9ffdd7/image.png)
+
 DOM을 통해 HTML요소로 정의된 트리를 관리할 수 있다.
 
 ```
