@@ -44,26 +44,27 @@
 순수 함수로 요소를 렌더링한다는 것은 DOM 요소가 애플리케이션의 상태에만 의존한다는 것을 의미한다.
 * [TodoMVC][1] 템플릿을 예제로 사용 
 
-### 예제 I : 순수 함수 렌더링
+### 예제 I : 순수 함수 렌더링 [코드 전체보기][2]
     첫번째 예제에서는 문자열을 사용해 요소를 렌더링한다.
-    예제의 전체 코드는 [여기][2] 에서 볼 수 있다.
 첫번째 예제에서의 렌더링 방식은 requestAnimationFrame과 가상 노드 조작을 사용해 충분한 성능을 보여준다. 하지만 뷰 함수는 읽기 쉽지 않다. 코드는 두 가지 중요한 문제를 갖고 있다.
 * **하나의 거대한 함수** : 여러 DOM을 조작하는 함수가 단 하나뿐이다. 이는 상황을 아주 쉽게 복잡하게 만들 수 있다.
 * **동일한 작업을 수행하는 여러 방법** : 문자열을 통해 리스트 항목을 생성한다. todo count 요소의 경우 단순히 기존 요소에 테스트를 추가하기만 하면 된다. 필터의 경우 classList를 관리한다.
 
 다음 예제에서는 뷰를 좀 더 작은 함수로 나누고 일관성 문제를 해결해보자.
 
-### 예제 II
+### 예제 II [코드 전체보기][3]
     코드가 훨씬 나아졌다. 동일한 서명의 세 개의 개별 함수를 만들었다. 이들 함수는 이 책에서 작성하는 '구성 요소 라이브러리'의 첫 번째 초안이 된다.
 
 앱 뷰(app.js)의 코드를 확인해보면 올바른 함수를 수동으로 호출해야 한다는 것을 알 수 있다. 구성 요소 기반의 애플리케이션을 작성하려면 구성 요소간의 상호작용에 선언적 방식을 사용해야 한다. 시스템은 모든 부분을 자동으로 연결할 것이다.
 
-### 예제 III : 구성 요소 함수
+### 예제 III : 구성 요소 함수 [코드 전체보기][4]
     이번 코드는 구성 요소 레지스트리를 갖는 렌더링 엔진의 예다. 이 목표를 달성하고자 먼저 해야 할 일은 특정 사례에서 사용할 구성 요소를 선언하는 방법을 정의하는 것이다. 예제에서는 todos, counters, filters의 세 가지 구성 요소를 가진다.
 
 
-### 예제 IV : 
+### 예제 IV :
 
 
 [1]: https://todomvc.com/
-[2]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim
+[2]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/01
+[3]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/02
+[4]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/03
