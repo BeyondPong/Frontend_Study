@@ -68,6 +68,8 @@ const renderRoot = (root, state) => {
 }
 
 // 모듈은 add와 renderRoot 함수를 내보내며, 애플리케이션의 다른 부분에서 컴포넌트를 등록하고 렌더링 프로세스를 루트에서 시작할 수 있도록 한다.
+// 최초 DOM 요소에서 렌더링을 시작하려면 애플리케이션의 루트를 렌더링하는 메소드를 제공해야한다. 예제 애플리케이션에서 이 메소드는 renderRoot
+// add와 renderRoot 메소드는 구성 요소 레지스트리의 공용 인터페이스
 export default {
     add,
     renderRoot
