@@ -74,10 +74,40 @@
 
 ![2-8](https://github.com/BeyondPong/Frontend_Study/assets/26542114/97356037-2e44-4b24-921a-9039ac24e528)
 
-### 예제 IV : 동적 데이터 렌더링 
+### 예제 IV : 동적 데이터 렌더링 [코드 전체보기][5]
+    이전 예제에서는 정적 데이터를 사용했다.
+    그러나 실제 애플리케이션에서는 사용자나 시스템의 이벤트에 의해 데이터가 변경된다.
+    index.js와 같이 5초마다 상태를 무작위로 변경해보자.
+#### 가상 DOM
+리액트에 의해 유명해진 가상 DOM 개념은 선언적 렌더링 엔진의 성능을 개선시키는 방법이다. UI 표현은 메모리에 유지되고 '실제' DOM과 동기화된다. 실제 DOM은 가능한 적은 작업을 수행한다. 이 과정은 조정(reconciliation)이라고 불린다. 
+이전 알고리즘에서는 전체 ul을 교체했다. 가상 DOM의 핵심은 diff 알고리즘이다. 이 알고리즘은 실제 DOM을 문서에서 분리된(즉, 가상의) 새로운 DOM 요소의 사본으로 바꾸는 가장 빠른 방법을 찾아낸다.
+아래 그림은 이 메커니즘을 시각적으로 보여준다.<br>
 
+![2-9](https://user-images.githubusercontent.com/66112716/212852347-6aac6f35-2667-488e-b6ee-fac4e56c9998.png)
+다음 예제에서 간단한 가상 DOM 구현을 해보자.
+
+### 예제 V : 간단한 가상 DOM 구현 [코드 전체보기][6]
+    메인 컨트롤러에서 replaceWith 대신 사용할 아주 간단한 diff 알고리즘을 사용해보자.
+    이 알고리즘은 "실제" DOM 트리(브라우저에 렌더링되는 내용)와 "가상" DOM 트리(Javascript 표현)를 비교하고 실제 DOM에 필요한 변경사항만 적용한다.
+    이를 통해 DOM 조작을 최소화하여 성능을 최적화한다.
+applyDiff 함수 매개변수는 parentNode, realNode, virtualNode로
+realNode와 virtualNode를 비교하여 차이점을 찾고 재귀적으로 아래 작업을 수행한다.
+* realNode가 존재하지만 virtualNode가 없으면 parentNode에서 realNode를 제거한다.
+* realNode가 없지만 virtualNode가 있으면 parentNode에 virtualNode를 추가한다.
+* 두 Node가 모두 있으면 차이를 확인하여 realNode를 virtualNode로 교체할지, 속성을 업데이트하고 자식을 재귀적으로 비교할지를 결정한다.
+
+
+isNodeChanged 함수를 통해 두 Node간의 차이를 확인한다.
+* 속성 수가 다르다.
+* 하나 이상의 속성이 변경됐다.
+* 노드에는 자식이 없으며, textContent가 다르다.
+
+### 요약
+    2장에서는 프레임워크 없이 애플리케이션의 렌더링 엔진을 만드는 방법을 배웠다. 또한 간단한 구성 요소 레지스트리 작성 방법과 가상 DOM 알고리즘을 사용해 엔진 성능을 향상시키는 방법도 살펴봤다. 3장에서는 사용자 에빈트를 관리하는 방법과 이런 이벤트를 렌더링 엔진과 통합하는 방법을 알아본다.
 
 [1]: https://todomvc.com/
 [2]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/01
 [3]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/02
 [4]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/03
+[5]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/04
+[6]: https://github.com/BeyondPong/Frontend_Study/tree/main/chapter02/misukim/05
